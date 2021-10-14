@@ -23,7 +23,7 @@ class AuthController
 
     public function register()
     {
-        $user = $this->usersRepository->save(
+        $this->usersRepository->save(
             new User(
                 Uuid::uuid4(),
                 $_POST['email'],
@@ -31,7 +31,10 @@ class AuthController
                 password_hash($_POST['password_confirmation'], PASSWORD_DEFAULT)
             )
         );
+
+        header('Location: /');
     }
+
 
     public function showLoginForm()
     {

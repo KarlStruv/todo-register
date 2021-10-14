@@ -57,16 +57,4 @@ class TasksController{
         }
         header('Location: /');
     }
-
-
-
-    public function register()
-    {
-
-    }
-
-    public function logIn()
-    {
-
-    }
 }

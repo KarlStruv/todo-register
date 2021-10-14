@@ -12,13 +12,13 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/tasks/{id}', 'TasksController@delete');
 
 
-    $r->addRoute('POST', '/users', 'UsersController@index');
+    $r->addRoute('GET', '/users', 'UsersController@index');
 
     $r->addRoute('GET', '/register', 'AuthController@showRegisterForm');
-    $r->addRoute('POST', '/register', 'TasksController@register');
+    $r->addRoute('POST', '/register', 'AuthController@register');
 
-    $r->addRoute('GET', '/login', 'TasksController@showLoginForm');
-    $r->addRoute('POST', '/login', 'TasksController@login');
+    $r->addRoute('GET', '/login', 'AuthController@showLoginForm');
+    $r->addRoute('POST', '/login', 'AuthController@login');
 
     $r->addRoute('POST', '/logout', 'TasksController@logout');
 

@@ -2,7 +2,6 @@
 require_once 'app/Views/partials/header.template.php';
 ?>
 
-
 <body>
 <a href="/">Back</a>
 <br>

@@ -4,17 +4,11 @@ require_once 'app/Views/partials/header.template.php'
 
 <body>
 
-<h1>Tasks</h1> (<a href="/tasks/create">Create</a>)
+<h1>Users</h1> (<a href="/">back</a>)
 <ul>
 
-    <?php foreach ($tasks->getTasks() as $task) { ?>
-        <li> <?php echo $task->getTitle(); ?></li>
-        <small>
-            (<?php echo $task->getCreatedAt(); ?>)
-        </small>
-        <form method="post" action="/tasks/<?php echo $task->getId();?>">
-            <button type="submit">X</button>
-        </form>
+    <?php foreach ($users->getUsers() as $user) { ?>
+        <li> <?php echo $user->getName(); ?></li>
     <?php } ?>
 
 </ul>

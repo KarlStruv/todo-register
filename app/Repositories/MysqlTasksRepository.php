@@ -14,8 +14,8 @@ class MysqlTasksRepository implements TasksRepository
     public function __construct()
     {
         $host = '127.0.0.1';
-        $db = 'todo-app';
-        $user = 'root';
+        $db = 'todoapp';
+        $user = 'karlstrv';
         $pass = '1234';
 
         $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
@@ -72,7 +72,7 @@ class MysqlTasksRepository implements TasksRepository
 
     public function save(Task $task): void
     {
-        $sql = "INSERT INTO tasks (id, title, status, created_at) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO tasks (id, title, status, created_at) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->connection->prepare($sql);
         $stmt->execute([
             $task->getId(),
